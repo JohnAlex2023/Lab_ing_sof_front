@@ -64,7 +64,7 @@
         </div>
 
         <!-- Iconos de usuario, ayuda, idioma y carrito -->
-        <a href="#" class="user-icon">
+        <a href="#" id="Iniciar_sesion" class="user-icon" @click="showModal = true">
           <img src="../assets/icono-usuario.png" alt="Icono usuario" class="icon">
           <span>Pedidos y cuenta</span>
         </a>
@@ -82,16 +82,30 @@
         <a href="#" class="cart-icon">
           <img src="../assets/icono-carro-compras.png" alt="Icono carrito" class="icon">
         </a> 
+
+        <Login v-if="showModal" @close="showModal = false" />
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import Login from '@/components/Login.vue'
+
 export default {
-  name: 'MainHeader',
+  components: {
+    Login
+  },
+  data() {
+    return {
+      showModal: false
+    }
+  }
 }
 </script>
+
+
+
 
 <style scoped>
 header {
@@ -257,4 +271,5 @@ header {
   margin-left:0px;
  
 }
+
 </style>
