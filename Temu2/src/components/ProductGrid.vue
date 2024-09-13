@@ -1,56 +1,91 @@
 <template>
-    <div class="product-grid">
-      <div v-for="product in products" :key="product.id" class="product-card">
-        <img :src="product.image" :alt="product.name" />
-        <h3>{{ product.name }}</h3>
-        <p>{{ product.price }}</p>
-        <button>Agregar al carrito</button>
-      </div>
+  <div class="product-grid">
+    <div v-for="product in products" :key="product.id" class="product-card">
+      <img :src="product.imageUrl" :alt="product.name" class="product-image" />
+      <h3 class="product-name">{{ product.name }}</h3>
+      <p class="product-price">{{ product.price }}</p>
+      <button class="add-to-cart-btn">Agregar al carrito</button>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'ProductGrid',
-    data() {
-      return {
-        products: [
-          { id: 1, name: 'Auriculares inalámbricos', price: '$18.877', image: '/api/placeholder/200/200' },
-          
-          { id: 2, name: 'Escurridor de platos', price: '$201.598', image: '/api/placeholder/200/200' },
-          { id: 3, name: 'Chaqueta Elegante', price: '$75.929', image: '/api/placeholder/200/200' },
-          { id: 4, name: 'Reloj inteligente', price: '$39.087', image: '/api/placeholder/200/200' },
-          { id: 5, name: 'Camiseta estampada', price: '$46.395', image: '/api/placeholder/200/200' },
-        ]
+  </div>
+</template>
+
+<script>
+import { ref, onMounted } from 'vue'
+
+export default {
+  name: 'ProductGrid',
+  setup() {
+    const products = ref([
+      { id: 1, name: 'Auriculares inalámbricos', price: '$18.877', image: 'auriculares-inalambricos.png' },
+      { id: 2, name: 'Escurridor de platos', price: '$201.598', image: 'escurridor-de-platos.png' },
+      { id: 3, name: 'Chaqueta Elegante', price: '$75.929', image: 'chaqueta-elegante.png' },
+      { id: 4, name: 'Reloj inteligente', price: '$39.087', image: 'reloj-inteligente.png' },
+      { id: 5, name: 'Camiseta estampada', price: '$46.395', image: 'camiseta-estampada.png' },
+    ])
+
+    onMounted(async () => {
+      for (const product of products.value) {
+        const imageModule = await import(`../assets/${product.image}`)
+        product.imageUrl = imageModule.default
       }
-    }
+    })
+
+    return { products }
   }
-  </script>
-  
-  <style scoped>
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .product-card {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .product-card img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .product-card button {
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  </style>
+}
+</script>
+
+<style scoped>
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+  border-radius: 4px;
+}
+
+.product-name {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.product-price {
+  font-size: 1.1em;
+  color: #e53935;
+  margin: 5px 0 10px;
+}
+
+.add-to-cart-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #ff5252;
+}
+</style>
