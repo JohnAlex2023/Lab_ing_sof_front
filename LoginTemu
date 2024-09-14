@@ -1,0 +1,26 @@
+# ---------------------------------------------------------------------- #
+# Script generated with: DeZign for Databases v6.2.1                     #
+# Target DBMS:           MySQL 5                                         #
+# Project file:          Project3.dez                                    #
+# Project name:                                                          #
+# Author:                                                                #
+# Script type:           Database creation script                        #
+# Created on:            2024-09-13 19:38                                #
+# ---------------------------------------------------------------------- #
+
+
+# ---------------------------------------------------------------------- #
+# Tables                                                                 #
+# ---------------------------------------------------------------------- #
+
+# ---------------------------------------------------------------------- #
+# Add table "Login"                                                      #
+# ---------------------------------------------------------------------- #
+
+CREATE TABLE `Login` (
+    `ID` NUMERIC NOT NULL AUTO_INCREMENT,
+    `usuario` VARCHAR(60),
+    `contraseña` VARCHAR(60),
+    `fecha_inicio` DATETIME,
+    CONSTRAINT `PK_Login` PRIMARY KEY (`ID`)
+);
