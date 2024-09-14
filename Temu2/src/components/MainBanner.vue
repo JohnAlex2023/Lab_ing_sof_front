@@ -38,15 +38,15 @@ export default {
     return {
       isExpanded: false,
       featuredProducts: [
-        { id: 1, name: 'Kitchen paper', image: 'https://via.placeholder.com/150', price: 39169 },
-        { id: 2, name: 'Food containers', image: 'https://via.placeholder.com/150', price: 14079 },
+        { id: 1, name: 'Reloj Inteligente', image: new URL('@/assets/relojinteligente.png', import.meta.url).href, price: 39169 },
+        { id: 2, name: 'Reloj Lenovo', image: new URL('@/assets/relojlenovo.png', import.meta.url).href, price: 14079 },
       ],
       products: [
-        { id: 1, name: 'Food containers', image: 'https://via.placeholder.com/150', discount: 22, originalPrice: 18050, discountedPrice: 14079, sales: '100K' },
-        { id: 2, name: 'Kitchen paper', image: 'https://via.placeholder.com/150', discount: 34, originalPrice: 59350, discountedPrice: 39169, sales: '81K' },
-        { id: 3, name: 'Gold watch', image: 'https://via.placeholder.com/150', discount: 65, originalPrice: 30590, discountedPrice: 10607, sales: '35K' },
-        { id: 4, name: 'Door mat', image: 'https://via.placeholder.com/150', discount: 68, originalPrice: 36116, discountedPrice: 11316, sales: '100K' },
-        { id: 5, name: 'Tool set', image: 'https://via.placeholder.com/150', discount: 67, originalPrice: 71940, discountedPrice: 23394, sales: '775' },
+        { id: 1, name: 'Food containers', image: new URL('@/assets/relojdeportivo.png', import.meta.url).href,  discount: 22, originalPrice: 18050, discountedPrice: 14079, sales: '100K' },
+        { id: 2, name: 'Kitchen paper', image: new URL('@/assets/camisetamujer.png', import.meta.url).href,  discount: 34, originalPrice: 59350, discountedPrice: 39169, sales: '81K' },
+        { id: 3, name: 'Gold watch', image: new URL('@/assets/conjuntodecollar.png', import.meta.url).href,  discount: 65, originalPrice: 30590, discountedPrice: 10607, sales: '35K' },
+        { id: 4, name: 'Door mat', image: new URL('@/assets/pulserahombre.png', import.meta.url).href,  discount: 68, originalPrice: 36116, discountedPrice: 11316, sales: '100K' },
+        { id: 5, name: 'Tool set', image: new URL('@/assets/conjuntoaretesdama.png', import.meta.url).href,  discount: 67, originalPrice: 71940, discountedPrice: 23394, sales: '775' },
       ]
     }
   },
@@ -57,6 +57,7 @@ export default {
   }
 }
 </script>
+
 
 <style scoped>
 .main-banner-container {
