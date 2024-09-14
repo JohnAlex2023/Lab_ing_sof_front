@@ -3,7 +3,6 @@
     <!-- Barra superior negra -->
     <div class="top-bar">
       <div class="top-bar-content">
-        <!-- Elementos de la barra superior -->
         <a href="#" class="top-bar-item">
           <img src="../assets/icono-camion.png" alt="Icono envío" class="icon">
           <div class="text-group">
@@ -15,8 +14,8 @@
         <a href="#" class="top-bar-item">
           <img src="../assets/icono-ajuste-precios.png" alt="Icono ajuste de precios" class="icon">
           <div class="text-group">
-            <span class="yellow-text">Ajuste de precios</span>
-            <span class="subtext">En un plazo de 30 días</span>
+            <span class="yellow-text">Devoluciones: 90 días</span>
+            <span class="subtext">desde la fecha de compra</span>
           </div>
         </a>
 
@@ -57,7 +56,7 @@
 
         <!-- Barra de búsqueda -->
         <div class="search-bar">
-          <input type="text" placeholder="ropa para mujer">
+          <input type="text" placeholder="camisetas de mujer en oferta">
           <button>
             <img src="../assets/icono-buscar.png" alt="Icono buscar" class="icon-small">
           </button>
@@ -66,7 +65,7 @@
         <!-- Iconos de usuario, ayuda, idioma y carrito -->
         <a href="#" id="Iniciar_sesion" class="user-icon" @click="showModal = true">
           <img src="../assets/icono-usuario.png" alt="Icono usuario" class="icon">
-          <span>Pedidos y cuenta</span>
+          <span>Pedidos y<br>cuenta</span>
         </a>
 
         <a href="#" class="help-icon">
@@ -104,9 +103,6 @@ export default {
 }
 </script>
 
-
-
-
 <style scoped>
 header {
   display: flex;
@@ -114,15 +110,12 @@ header {
 }
 
 .top-bar {
-  background-color: #0a0a0a;
+  background-color: #000000;
   color: #fff;
   display: flex;
   justify-content: center;
-  padding: 10px 0; 
-  font-size: 0.9em; 
-  width: 100%;
-  
-  
+  padding: 5px 0;
+  font-size: 0.8em;
 }
 
 .top-bar-content, .bottom-bar-content {
@@ -132,7 +125,6 @@ header {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  
 }
 
 .top-bar-item {
@@ -140,9 +132,6 @@ header {
   align-items: center;
   text-decoration: none;
   color: #fff;
-  margin-right: 20px;
-  margin-left: 10px;
-  
 }
 
 .text-group {
@@ -151,14 +140,8 @@ header {
 }
 
 .icon {
-  height: 30px;
-  margin-right: 10px;
-  
-}
-
-.green-text, .yellow-text {
-  font-weight: bold;
-  line-height: 1.2;
+  height: 20px;
+  margin-right: 5px;
 }
 
 .green-text { color: #A9F8A7; }
@@ -167,28 +150,26 @@ header {
 .subtext { 
   color: #999; 
   font-size: 0.9em;
-  line-height: 1.2; 
 }
 
 .bottom-bar {
-  background-color: #F5657F;
+  background-color:#f9697f;
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 10px 0;
-  font-size: 0.9em; 
+  font-size: 0.9em;
 }
 
 .logo { 
-  height: 50px;
-  margin-right: 3px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 .nav-links {
   display: flex;
   gap: 15px;
   align-items: center;
-  flex-grow: 1;
 }
 
 .nav-links a {
@@ -214,7 +195,7 @@ header {
   position: absolute;
   top: -15px;
   left: 50%;
-  transform: translateX(80%);
+  transform: translateX(-50%);
   background-color: #f57d05;
   color: #ffffff;
   font-weight: bold;
@@ -227,7 +208,6 @@ header {
 .icon-small {
   height: 18px;
   margin-right: 5px;
-  
 }
 
 .search-bar {
@@ -236,8 +216,8 @@ header {
   background-color: #fff;
   border-radius: 20px;
   overflow: hidden;
-  flex-grow: 1; 
-  margin: 5px; 
+  flex-grow: 1;
+  margin: 0 15px;
 }
 
 .search-bar input {
@@ -260,16 +240,20 @@ header {
   align-items: center;
   text-decoration: none;
   color: #fff;
-  margin-left: 8px;
-  margin-right: 0;
+  margin-left: 15px;
   font-size: 0.9em;
-  
-  
 }
 
 .user-icon span, .help-icon span, .language-icon span {
-  margin-left:0px;
- 
+  margin-left: 5px;
+  text-align: left;
 }
 
+.user-icon span {
+  line-height: 1.2;
+}
+
+.icon {
+  height: 24px;
+}
 </style>

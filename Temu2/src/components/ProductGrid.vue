@@ -88,4 +88,33 @@ export default {
 .add-to-cart-btn:hover {
   background-color: #ff5252;
 }
+
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+  }
+
+  .product-card {
+    padding: 5px; /* Ajusta el padding en pantallas pequeñas */
+  }
+
+  .product-name {
+    font-size: 1em; /* Ajusta el tamaño del texto */
+  }
+
+  .product-price {
+    font-size: 0.9em; /* Ajusta el tamaño del precio */
+  }
+
+  .product-image {
+    height: 150px; /* Reduce la altura de la imagen en pantallas pequeñas */
+  }
+
+  .add-to-cart-btn {
+    padding: 6px 10px; /* Botón más pequeño en pantallas pequeñas */
+  }
+}
+
 </style>
